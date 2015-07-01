@@ -41,7 +41,9 @@ module Twilio
           to = opts[:to]
           body = opts[:body]
           from = opts[:from]
-          add_message SmsSpec::Message.new(:number => to, :from => from, :body => body)
+          message = SmsSpec::Message.new(:number => to, :from => from, :body => body)
+          add_message(message)
+          message
         end
       end
 
